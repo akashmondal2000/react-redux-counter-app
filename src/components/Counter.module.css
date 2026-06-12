@@ -21,3 +21,10 @@
   margin: 2rem 0;
   font-weight: bold;
 }
+
+.buttons{
+  margin: 1rem;
+}
+.buttons button{
+  margin: 1rem;
+}
