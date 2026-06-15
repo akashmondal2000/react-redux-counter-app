@@ -6,9 +6,9 @@ const Auth = () => {
   const isAuth = useSelector(state => state.auth.isAuthenticated);
   const dispatch = useDispatch();
 
-  const loginHandler =(event)=>{
-    event.preventDefault();
-
+  const loginHandler =(fd)=>{
+    const formData = Object.fromEntries(fd);
+    console.log(formData);
     dispatch(authAction.login());
   }
 
@@ -16,14 +16,14 @@ const Auth = () => {
   return (
     <main className={classes.auth}>
       <section>
-        <form onSubmit={loginHandler}>
+        <form action={loginHandler}>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
-            <input type='email' id='email' required />
+            <input name='email' type='email' id='email' required />
           </div>
           <div className={classes.control}>
             <label htmlFor='password'>Password</label>
-            <input type='password' id='password' required />
+            <input name='password' type='password' id='password' required />
           </div>
           <button>Login</button>
         </form>
