@@ -4,8 +4,8 @@ import { counterAction } from "../store/index.js"
 
 
 const Counter = () => {
-    const counter = useSelector( state => state.counter );
-    const show = useSelector( state => state.showCounter );
+    const counter = useSelector( state => state.counter.counter );
+    const show = useSelector( state => state.counter.showCounter );
     const dispatch = useDispatch();
 
 
@@ -34,7 +34,6 @@ const Counter = () => {
             <button onClick={decrementHandler}>Decrement</button>
         </div>
         <button onClick={toggleCounterHandler} > Toggle Counter </button>
-
     </main>
   )
 }
